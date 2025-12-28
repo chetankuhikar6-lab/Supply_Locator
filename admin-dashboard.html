@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Supply Locator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Admin Dashboard</h1>
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <!-- Relief Center Management Form -->
+            <div class="admin-form-card">
+                <h2>Manage Relief Center</h2>
+                <form id="reliefCenterForm" onsubmit="handleReliefCenterSubmit(event)">
+                    <div class="form-group">
+                        <label for="centerName">Relief Center Name</label>
+                        <input type="text" id="centerName" name="centerName" required placeholder="Enter relief center name">
+                    </div>
+                    <div class="form-group">
+                        <label for="locationAddress">Location Address</label>
+                        <textarea id="locationAddress" name="locationAddress" required rows="3" placeholder="Enter complete location address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="supplyType">Supply Type</label>
+                        <select id="supplyType" name="supplyType" required>
+                            <option value="">Select supply type</option>
+                            <option value="food">Food & Water</option>
+                            <option value="medical">Medical Supplies</option>
+                            <option value="shelter">Shelter & Clothing</option>
+                            <option value="hygiene">Hygiene Products</option>
+                            <option value="tools">Tools & Equipment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status" name="status" required>
+                            <option value="">Select status</option>
+                            <option value="available">Available</option>
+                            <option value="limited">Limited Stock</option>
+                            <option value="unavailable">Unavailable</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Save Relief Center</button>
+                </form>
+            </div>
+
+            <!-- Relief Centers List -->
+            <div class="centers-list-card">
+                <h2>Relief Centers</h2>
+                <div id="centersList" class="centers-list">
+                    <!-- Centers will be dynamically added here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
